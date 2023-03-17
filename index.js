@@ -1,29 +1,21 @@
-console.clear()
 
-const buttonBookmark = document.querySelector('[data-js="buttonBookmark"]')
+// phew… not a lot going on here. Please add some code!
+const bookmarkButton = document.querySelector("[data-js=bookmark]");
 
-const cardButtonAnswer = document.querySelector('[data-js="cardButtonAnswer"]')
-const cardAnswer = document.querySelector('[data-js="cardAnswer"]')
+bookmarkButton?.addEventListener("click", () => {
+  bookmarkButton.classList.toggle("bookmark--active");
+});
 
-buttonBookmark.addEventListener("click", () => {
-    buttonBookmark.classList.toggle("bookmark--active")
-})
+const answerButton = document.querySelector("[data-js=answer-button]");
+const answer = document.querySelector("[data-js=answer]");
 
-
-cardButtonAnswer.addEventListener("click", () => {
-    cardAnswer.classList.toggle("card__answer--active")
-
-    console.log(cardButtonAnswer.textContent)
-
-    if (cardButtonAnswer.textContent.trim() === "Show answer") {
-        cardButtonAnswer.textContent = "Hide answer"
-    } else {
-        cardButtonAnswer.textContent = "Show answer"
-    }
-
-    console.log(cardButtonAnswer.textContent)
-})
-
+answerButton?.addEventListener("click", () => {
+  answer.classList.toggle("card__answer--active");
+  answerButton.textContent =
+    answerButton.textContent.trim() === "Show answer"
+      ? "Hide answer"
+      : "Show answer";
+});
 
 
 
